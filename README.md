@@ -31,11 +31,11 @@ Follow these steps to set up the development environment:
 ### Using pip (requirements.txt)
 
 1. Clone the repository:
-   ```bash
+   ```
    git clone https://github.com/Lavender105/solar_wind_complementarity.git
    cd solar_wind_complementarity
    ```
-2. Install dependencies:
+3. Install dependencies:
    ```
    pip install -r requirements.txt
    ```
