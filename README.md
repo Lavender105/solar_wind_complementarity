@@ -10,3 +10,7 @@ The rapid expansion of solar and wind installations in China has introduced sign
 - [System Requirements](#system-requirements)
 - [Installation Guide](#installation-guide)
 - [License](#license)
+
+## System Requirements
+### Hardware requirements
+package requires only a standard computer with enough RAM to support the in-memory operations.
