@@ -41,9 +41,9 @@ Follow these steps to set up the development environment:
    ```
 ### Using conda (environment.yml)
 1.	Clone the repository:
-   ```bash
-   git clone https://github.com/Lavender105/solar_wind_complementarity.git
-   cd solar_wind_complementarity
+   ```
+  	git clone https://github.com/Lavender105/solar_wind_complementarity.git
+  	cd solar_wind_complementarity
    ```
 2. Create a conda environment from the environment.yml file:
    ```
