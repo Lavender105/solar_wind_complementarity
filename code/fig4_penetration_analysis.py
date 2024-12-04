@@ -440,7 +440,7 @@ def draw_matches_map_with_load_power_circles(gdf, load_col, power_col, matches, 
     font_path = '/System/Library/Fonts/Helvetica.ttc'
     prop = FontProperties(fname=font_path)
 
-    jiuduanxian_path = f'../中国区划shp/中国区划-权威/九段线.shp'
+    jiuduanxian_path = f'../data/China_boundary_shps/九段线.shp'
     jiuduanxian = gpd.read_file(jiuduanxian_path)
 
     projection = ccrs.LambertConformal(central_longitude=105, central_latitude=35, standard_parallels=(30, 60))
@@ -583,11 +583,11 @@ if __name__ == "__main__":
     __spec__ = None
 
     ### load data
-    load_data_path = '../data_processed/load_data/load_data.json'
+    load_data_path = '../data/load_data/load_data.json'
     with open(load_data_path, 'r') as f:
         load_data = json.load(f)
 
-    output_dir = '../data_processed/output/fig4'
+    output_dir = '../output/fig4'
     os.makedirs(output_dir, exist_ok=True)
     output_dir_load_power = os.path.join(output_dir, 'load_power_matched')
     os.makedirs(output_dir_load_power, exist_ok=True)
@@ -611,7 +611,7 @@ if __name__ == "__main__":
         load_country += load_prov
 
     ### solar wind power
-    solar_wind_path = f'solar_wind_province_level.geojson'
+    solar_wind_path = '../data/solar_wind_aggregation/solar_wind_province_level.geojson'
     solar_wind = gpd.read_file(solar_wind_path)
 
     province_dict = {'北京市':'beijing', '天津市':'tianjin', '河北省':'hebei', '山西省':'shanxi(yi)', '内蒙古自治区':'neimeng', 
@@ -889,6 +889,7 @@ if __name__ == "__main__":
     expanded_colors = interpolate_colors(colors, len(matches))
     print_save(f'{expanded_colors}', log)
     save_path = os.path.join(output_dir, f'arbitrary_matches_with_circle_map.png')
+    draw_matches_map_with_load_power_circles(solar_wind, 'load', 's_w_power', matches, expanded_colors, save_path=save_path)
 
     total_load_province_match = []
     storage_max_province_match = []

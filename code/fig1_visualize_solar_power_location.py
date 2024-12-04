@@ -104,31 +104,31 @@ if __name__ == "__main__":
     __spec__ = None
 
     t1 = time.time()
-    county_data_extended_path = 'county_data_extended_solar.geojson'
+    county_data_extended_path = '../data/solar_wind_aggregation/solar_wind_qinghai.geojson'
     county_data_extended = gpd.read_file(county_data_extended_path)
-    county_data_extended['power_sum'] = county_data_extended['power_sum'].apply(lambda x: x/1e3) # GW
+    county_data_extended['power_sum_solar'] = county_data_extended['power_sum_solar'].apply(lambda x: x/1e3) # GW
     t2 = time.time()
     print(f'complete reading solar generation data! spend {t2 - t1} seconds.')
 
-    solar_path = 'AIEarth_全国光伏分布数据V1.0_20231030.shp'
+    solar_path = '../data/installation_shps/solar/Qinghai.shp'
     solar_data = gpd.read_file(solar_path)
     t3 = time.time()
     print(f'complete reading original solar data! spend {t3 - t2} seconds.')
 
     level2property = {'省': '省', '市': '地名', '县': '地名'}
     level = '县'
-    county_boundaries_path = f'../中国区划shp/中国区划-权威/2021年{level}矢量.shp'
+    county_boundaries_path = f'../data/China_boundary_shps/2021年{level}矢量.shp'
     county_data = gpd.read_file(county_boundaries_path)
-    jiuduanxian_path = f'../中国区划shp/中国区划-权威/九段线.shp'
+    jiuduanxian_path = f'../data/China_boundary_shps/九段线.shp'
     jiuduanxian = gpd.read_file(jiuduanxian_path)
     t4 = time.time()
     print(f'complete reading county boundary and jiuduanxian! spend {t4 - t3} seconds.')
 
 
-    output_dir = f'../data_processed/output/fig1'
+    output_dir = f'../output/fig1'
     os.makedirs(output_dir, exist_ok=True)
 
-    print('plot power_sum map ...')
+    print('plot power_sum_solar map ...')
     font_path = '/System/Library/Fonts/Helvetica.ttc'
     prop = FontProperties(fname=font_path)
     
@@ -178,16 +178,16 @@ if __name__ == "__main__":
     print(f'complete drawing nanhai map, apend {t9 - t8} seconds.')
 
     for i, (start, end) in enumerate(color_ranges):
-        subset = county_data_extended[(county_data_extended['power_sum'] >= start) & (county_data_extended['power_sum'] < end)]
+        subset = county_data_extended[(county_data_extended['power_sum_solar'] >= start) & (county_data_extended['power_sum_solar'] < end)]
         subset = subset[~subset['geometry'].apply(lambda geom: geom.geom_type in ['Polygon', 'MultiPolygon'] and geom.area < 1e-6)]
         if subset.empty:
             continue
         fc = colors[i] if i > 0 else 'None'
         ax.add_geometries(subset["geometry"], crs=ccrs.PlateCarree(), fc=fc, ec="black", linewidth=0.1)
         ax_n.add_geometries(subset["geometry"], crs=ccrs.PlateCarree(), fc=fc, ec="black", linewidth=0.03)
-        print('({}, {}): {}'.format(start, end, len(subset['power_sum'])))
+        print('({}, {}): {}'.format(start, end, len(subset['power_sum_solar'])))
     t10 = time.time()
-    print(f'complete drawing power_sum, spend {t10 - t9} seconds.')
+    print(f'complete drawing power_sum_solar, spend {t10 - t9} seconds.')
 
     print('adding solar geometry...')
     ax.add_geometries(solar_data["geometry"], crs=ccrs.PlateCarree(), fc="darkred", ec="darkred", linewidth=1)

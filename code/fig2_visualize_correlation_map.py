@@ -124,7 +124,7 @@ def draw_correlation_map_same(gdf, column, save_path):
     font_path = '/System/Library/Fonts/Helvetica.ttc'
     prop = FontProperties(fname=font_path)
 
-    jiuduanxian_path = f'../中国区划shp/中国区划-权威/九段线.shp'
+    jiuduanxian_path = f'../data/China_boundary_shps/九段线.shp'
     jiuduanxian = gpd.read_file(jiuduanxian_path)
 
     projection = ccrs.LambertConformal(central_longitude=105, central_latitude=35, standard_parallels=(30, 60))
@@ -228,7 +228,7 @@ def draw_correlation_bezier_map_diff(gdf, column_min, column_argmin, colors, leg
     font_path = '/System/Library/Fonts/Helvetica.ttc'
     prop = FontProperties(fname=font_path)
 
-    jiuduanxian_path = f'../中国区划shp/中国区划-权威/九段线.shp'
+    jiuduanxian_path = f'../data/China_boundary_shps/九段线.shp'
     jiuduanxian = gpd.read_file(jiuduanxian_path)
 
     projection = ccrs.LambertConformal(central_longitude=105, central_latitude=35, standard_parallels=(30, 60))
@@ -337,12 +337,12 @@ def draw_correlation_map_diff(gdf, column_min, column_argmin, colors, legend_lab
     font_path = '/System/Library/Fonts/Helvetica.ttc'
     prop = FontProperties(fname=font_path)
 
-    jiuduanxian_path = f'../中国区划shp/中国区划-权威/九段线.shp'
+    jiuduanxian_path = f'../data/China_boundary_shps/九段线.shp'
     jiuduanxian = gpd.read_file(jiuduanxian_path)
 
     projection = ccrs.LambertConformal(central_longitude=105, central_latitude=35, standard_parallels=(30, 60))
     fig, ax = plt.subplots(1, 1, figsize=(8, 8), subplot_kw={'projection': projection})
-    ax.set_extent([76, 132, 16, 53.5], ccrs.PlateCarree())  # 设置经纬度范围
+    ax.set_extent([76, 132, 16, 53.5], ccrs.PlateCarree())
     ax_n = fig.add_axes([0.78, 0.23, 0.1, 0.12], projection = projection)
     ax_n.set_extent([104.5, 125, 0, 26])
     fig.canvas.draw()
@@ -387,8 +387,8 @@ def draw_correlation_map_diff(gdf, column_min, column_argmin, colors, legend_lab
     legend_list = [mpatches.Patch(facecolor='0.95', edgecolor='0.2', linewidth=0.2, label=legend_label)]
 
     sm.set_array([])
-    vmin = gdf[column].min()
-    vmax = gdf[column].max()
+    vmin = gdf[column_min].min()
+    vmax = gdf[column_min].max()
     vcenter = 0
     axins = ax.inset_axes([0.83, 0.32, 0.03, 0.33]) # (x, y, width, height)
     cbar = plt.colorbar(sm, cax=axins, label='Correlation coefficient')
@@ -409,7 +409,7 @@ def draw_strategy_map(gdf, strategies, column_argmin, column_min, cbar_label, ti
     prop = FontProperties(fname=font_path)
     bold_prop = FontProperties(fname=font_path, weight='bold')
 
-    jiuduanxian_path = f'../中国区划shp/中国区划-权威/九段线.shp'
+    jiuduanxian_path = f'../data/China_boundary_shps/九段线.shp'
     jiuduanxian = gpd.read_file(jiuduanxian_path)
 
     projection = ccrs.LambertConformal(central_longitude=105, central_latitude=35, standard_parallels=(30, 60))
@@ -512,11 +512,11 @@ if __name__ == "__main__":
     corr_types = ['pearson', 'spearmanr', 'kendalltau']
     which_corr_short = {'pearson': 'ps', 'spearmanr': 'sm', 'kendalltau': 'kd'}
 
-    solar_wind_path = 'solar_wind_county_level.geojson'
+    solar_wind_path = '../data/solar_wind_aggregation/solar_wind_qinghai.geojson'
     solar_wind = gpd.read_file(solar_wind_path)
     print('read solar_wind file completed.')
 
-    output_dir = f'../data_processed/output/fig2'
+    output_dir = f'../output/fig2'
     os.makedirs(output_dir, exist_ok=True)
 
     ################################################################################

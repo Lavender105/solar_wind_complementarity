@@ -51,7 +51,7 @@ def draw_stack_bar(x, y1, y2, save_path):
 
 if __name__ == "__main__":
 
-    output_dir = f'../data_processed/output/fig1'
+    output_dir = f'../output/fig1'
     os.makedirs(output_dir, exist_ok=True)
 
     statistics_path = os.path.join(output_dir, 'statistics.json')
@@ -60,13 +60,13 @@ if __name__ == "__main__":
             statistics = json.load(f)
         print(f'load {statistics_path} complete!')
     else:
-        solar_wind_path = 'solar_wind_province_level.geojson'
+        solar_wind_path = '../data/solar_wind_aggregation/solar_wind_province_level.geojson'
         solar_wind = gpd.read_file(solar_wind_path)
         print('read solar_wind file completed.')
 
         level2property = {'省': '省', '市': '地名', '县': '地名'}
         level = '省'
-        county_boundaries_path = f'../中国区划shp/中国区划-权威/2021年{level}矢量.shp'
+        county_boundaries_path = f'../data/China_boundary_shps/2021年{level}矢量.shp'
         print(f'reading {county_boundaries_path} ...')
         county_data = gpd.read_file(county_boundaries_path)
         print('complete!')
@@ -89,7 +89,7 @@ if __name__ == "__main__":
 
 
         # solar polygon shapefile
-        solar_path = 'AIEarth_全国光伏分布数据V1.0_20231030.shp'
+        solar_path = '../data/installation_shps/solar/Qinghai.shp'
         print(f'reading {solar_path} ...')
         solar_data = gpd.read_file(solar_path)
         print('complete!')
@@ -97,9 +97,9 @@ if __name__ == "__main__":
         solar_data['area_py'] = solar_data.to_crs(proj4_string)['geometry'].area
         solar_data['count'] = [1 for i in range(solar_data.shape[0])]
 
-        wind_path = 'AIEarth_全国风机分布数据V1.3_20231226.shp'
+        wind_path = '../data/installation_shps/wind/Qinghai.shp'
         print(f'reading {wind_path} ...')
-        wind_data = gpd.read_file(wind_path)
+        wind_data = gpd.read_file(wind_path, encoding='gbk')
         print('complete!')
         wind_data['count'] = [1 for i in range(wind_data.shape[0])]
 
@@ -147,8 +147,8 @@ if __name__ == "__main__":
         wind_counts.append(item['wind_count'])
         wind_powers.append(item['wind_power']/1e3) # MW -> GW
 
-    save_path = os.path.join(output_dir, 'bar_solar_wind_power.png')
-    draw_stack_bar(provinces, solar_powers, wind_powers, save_path=save_path)
+    # save_path = os.path.join(output_dir, 'bar_solar_wind_power.png')
+    # draw_stack_bar(provinces, solar_powers, wind_powers, save_path=save_path)
 
     total_powers = [solar + wind for solar, wind in zip(solar_powers, wind_powers)]
     sorted_data = sorted(zip(provinces, solar_powers, wind_powers, total_powers), key=lambda x: x[3], reverse=True)

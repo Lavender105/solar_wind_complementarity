@@ -124,7 +124,7 @@ def draw_cv_map(gdf, column, min_val, max_val, colormap, legend_label, cbar_labe
     font_path = '/System/Library/Fonts/Helvetica.ttc'
     prop = FontProperties(fname=font_path)
 
-    jiuduanxian_path = f'../中国区划shp/中国区划-权威/九段线.shp'
+    jiuduanxian_path = f'../data/China_boundary_shps/九段线.shp'
     jiuduanxian = gpd.read_file(jiuduanxian_path)
 
     projection = ccrs.LambertConformal(central_longitude=105, central_latitude=35, standard_parallels=(30, 60))
@@ -358,10 +358,10 @@ def hypothesis_testing(before, after):
 
     if p_value_normal_before > 0.05 and p_value_normal_after > 0.05:
         _, p_value_t_test = stats.ttest_rel(before, after)
-        print("配对样本t检验的P值:", p_value_t_test)
+        print("The p-value of a paired sample t-test:", p_value_t_test)
     else:
         _, p_value_wilcoxon = stats.wilcoxon(before, after)
-        print("Wilcoxon符号秩检验的P值:", p_value_wilcoxon)
+        print("The p-value of the Wilcoxon signed-rank test:", p_value_wilcoxon)
 
 
 if __name__ == "__main__":
@@ -373,11 +373,11 @@ if __name__ == "__main__":
     corr_types = ['pearson', 'spearmanr', 'kendalltau']
     which_corr_short = {'pearson': 'ps', 'spearmanr': 'sm', 'kendalltau': 'kd'}
 
-    solar_wind_path = 'solar_wind_county_level.geojson'
+    solar_wind_path = '../data/solar_wind_aggregation/solar_wind_qinghai.geojson'
     solar_wind = gpd.read_file(solar_wind_path)
     print('read solar_wind file completed.')
 
-    output_dir = f'../data_processed/output/fig3'
+    output_dir = f'../output/fig3'
     os.makedirs(output_dir, exist_ok=True)
 
     ################################################################################

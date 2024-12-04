@@ -312,7 +312,7 @@ def draw_map(gdf, column, min_val=None, max_val=None, colormap='PiYG', lengend_l
     font_path = '/System/Library/Fonts/Helvetica.ttc'
     prop = FontProperties(fname=font_path)
 
-    jiuduanxian_path = f'../中国区划shp/中国区划-权威/九段线.shp'
+    jiuduanxian_path = f'../data/China_boundary_shps/九段线.shp'
     jiuduanxian = gpd.read_file(jiuduanxian_path)
 
     projection = ccrs.LambertConformal(central_longitude=105, central_latitude=35, standard_parallels=(30, 60))
@@ -383,11 +383,11 @@ if __name__ == "__main__":
     __spec__ = None
 
     ### load data
-    load_data_path = '../data_processed/load_data/load_data.json'
+    load_data_path = '../data/load_data/load_data.json'
     with open(load_data_path, 'r') as f:
         load_data = json.load(f)
 
-    output_dir = '../data_processed/output/fig5'
+    output_dir = '../output/fig5'
     os.makedirs(output_dir, exist_ok=True)
     output_dir_load_comp = os.path.join(output_dir, 'load_components')
     os.makedirs(output_dir_load_comp, exist_ok=True)
@@ -406,7 +406,7 @@ if __name__ == "__main__":
         load_country += load_prov
 
     ### solar wind power
-    solar_wind_path = f'solar_wind_province_level.geojson'
+    solar_wind_path = f'../data/solar_wind_aggregation/solar_wind_province_level.geojson'
     solar_wind = gpd.read_file(solar_wind_path)
 
     province_dict = {'北京市':'beijing', '天津市':'tianjin', '河北省':'hebei', '山西省':'shanxi(yi)', '内蒙古自治区':'neimeng', 
