@@ -28,7 +28,7 @@ The package dependencies are in requirements.txt.
 ## Installation Guide
 Follow these steps to set up the development environment:
 
-### Using pip (`requirements.txt`)
+### Using pip (requirements.txt)
 
 1. Clone the repository:
    ```bash
@@ -49,8 +49,8 @@ Follow these steps to set up the development environment:
    ```
    conda env create -f environment.yml
    ```
-3.	Activate the environment:
+3. Activate the environment:
    ```
-conda activate solarwind
-```
+   conda activate solarwind
+   ```
 
