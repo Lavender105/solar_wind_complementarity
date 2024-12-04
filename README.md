@@ -23,5 +23,34 @@ The codes has been tested on the following systems:
 - Linux: Ubuntu 20.04
 
 #### Python Dependencies
+The package dependencies are in requirements.txt.
 
+## Installation Guide
+Follow these steps to set up the development environment:
+
+### Using pip (`requirements.txt`)
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/Lavender105/solar_wind_complementarity.git
+   cd solar_wind_complementarity
+   ```
+2. Install dependencies:
+   ```
+   pip install -r requirements.txt
+   ```
+### Using conda (environment.yml)
+1.	Clone the repository:
+   ```bash
+   git clone https://github.com/Lavender105/solar_wind_complementarity.git
+   cd solar_wind_complementarity
+   ```
+2. Create a conda environment from the environment.yml file:
+   ```
+   conda env create -f environment.yml
+   ```
+3.	Activate the environment:
+   ```
+conda activate solarwind
+```
 
