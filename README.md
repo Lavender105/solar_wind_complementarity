@@ -13,7 +13,7 @@ The rapid expansion of solar and wind installations in China has introduced sign
 
 ## System Requirements
 ### Hardware requirements
-The codes requires only a standard computer with enough RAM to support the in-memory operations.
+The code requires a standard computer with enough RAM to support the in-memory operations.
 
 ### Software requirements
 #### OS Requirements
@@ -23,7 +23,7 @@ The codes has been tested on the following systems:
 - Linux: Ubuntu 20.04
 
 #### Python Dependencies
-The package dependencies are in requirements.txt.
+All package dependencies are listed in the requirements.txt file.
 
 ## Installation Guide
 Follow these steps to set up the development environment:
@@ -53,21 +53,28 @@ Follow these steps to set up the development environment:
    ```
    conda activate solarwind
    ```
-The installation should take approximately 40 seconds on a recommended computer.
+The installation process should take approximately 40 seconds on a standard recommended computer.
 
 ## Demo
-You can run the .py files using python command, for example
-```
-cd code
-python fig1_calculate_provincial_statistic.py
-```
-This will output the provincial bar map for the estimated solar and wind total generation in 2022. It takes approximately 8 seconds to run the code.
-```
-python fig1_visualize_solar_power_location.py
-```
-This will output the solar installation map in China. It takes approximately 85 seconds to run the code.
-```
-python fig1_visualize_wind_power_location.py
-```
-This will output the wind installation map in China. It takes approximately 45 seconds to run the code.
+You can run the Python scripts to generate results by following these steps:
+1.	Navigate to the code directory:
+   ```
+   cd code
+   ```
+2.	Execute the scripts using the python command:
+   - Generate the provincial bar chart for solar and wind power (2022):
+     ```
+     python fig1_calculate_provincial_statistic.py
+     ```
+This script generates a bar chart showing the estimated total solar and wind power generation for 2022. The execution time is approximately 8 seconds.
+   - Visualize solar power installation locations in China:
+     ```
+     python fig1_visualize_solar_power_location.py
+     ```
+This script produces a map of solar installations in China. The execution time is approximately 85 seconds.
+   - Visualize wind power installation locations in China:
+     ```
+     python fig1_visualize_wind_power_location.py
+     ```
+This script generates a map of wind installations in China. The execution time is approximately 45 seconds.
 
