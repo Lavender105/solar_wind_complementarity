@@ -61,13 +61,13 @@ You can run the .py files using python command, for example
 cd code
 python fig1_calculate_provincial_statistic.py
 ```
-This will output the provincial bar map for the estimated solar and wind total generation in 2022.
+This will output the provincial bar map for the estimated solar and wind total generation in 2022. It takes approximately 8 seconds to run the code.
 ```
 python fig1_visualize_solar_power_location.py
 ```
-This will output the solar installation map in China.
+This will output the solar installation map in China. It takes approximately 85 seconds to run the code.
 ```
 python fig1_visualize_wind_power_location.py
 ```
-This will output the wind installation map in China.
+This will output the wind installation map in China. It takes approximately 45 seconds to run the code.
 
