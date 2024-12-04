@@ -61,7 +61,7 @@ The installation process should take approximately 40 seconds on a standard reco
 
 The code folder contains Python scripts designed to analyze solar and wind power installations in China, evaluate complementary strategies, and visualize the results through various statistical and geographical plots. Below is a brief description of the functionality of each script:
 
-- fig1_calculate_provincial_statistic.py
+- **fig1_calculate_provincial_statistic.py**
 
 Calculates the total annual power generation for solar and wind installations in each province of China for the year 2022, and generates a bar chart for visualization.
 
