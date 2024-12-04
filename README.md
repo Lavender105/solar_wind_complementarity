@@ -9,6 +9,8 @@ The rapid expansion of solar and wind installations in China has introduced sign
 ## Contents
 - [System Requirements](#system-requirements)
 - [Installation Guide](#installation-guide)
+- [Code Description](#code-description)
+- [Demo](#demo)
 - [License](#license)
 
 ## System Requirements
@@ -110,3 +112,5 @@ This script produces a map of solar installations in China. The execution time i
   ```
 This script generates a map of wind installations in China. The execution time is approximately 45 seconds.
 
+## License
+This project is covered under the Apache 2.0 License.
