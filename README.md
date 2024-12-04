@@ -35,15 +35,15 @@ Follow these steps to set up the development environment:
    git clone https://github.com/Lavender105/solar_wind_complementarity.git
    cd solar_wind_complementarity
    ```
-3. Install dependencies:
+2. Install dependencies:
    ```
    pip install -r requirements.txt
    ```
 ### Using conda (environment.yml)
-1.	Clone the repository:
+1. Clone the repository:
    ```
-  	git clone https://github.com/Lavender105/solar_wind_complementarity.git
-  	cd solar_wind_complementarity
+   git clone https://github.com/Lavender105/solar_wind_complementarity.git
+   cd solar_wind_complementarity
    ```
 2. Create a conda environment from the environment.yml file:
    ```
@@ -53,4 +53,21 @@ Follow these steps to set up the development environment:
    ```
    conda activate solarwind
    ```
+The installation should take approximately 40 seconds on a recommended computer.
+
+## Demo
+You can run the .py files using python command, for example
+```
+cd code
+python fig1_calculate_provincial_statistic.py
+```
+This will output the provincial bar map for the estimated solar and wind total generation in 2022.
+```
+python fig1_visualize_solar_power_location.py
+```
+This will output the solar installation map in China.
+```
+python fig1_visualize_wind_power_location.py
+```
+This will output the wind installation map in China.
 
