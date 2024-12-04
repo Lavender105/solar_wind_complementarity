@@ -1,0 +1,51 @@
+affine==2.4.0
+attrs==23.1.0
+Cartopy @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_c3j3dh0afd/croot/cartopy_1674677766883/work
+cdsapi==0.6.1
+certifi==2023.11.17
+cffi==1.16.0
+cfgrib==0.9.10.4
+charset-normalizer==3.3.2
+click==8.1.7
+click-plugins==1.1.1
+cligj==0.7.2
+cloudpickle==3.0.0
+contourpy @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_97c8ctlp86/croots/recipe/contourpy_1663827422071/work
+cycler @ file:///tmp/build/80754af9/cycler_1637851556182/work
+eccodes==1.6.1
+ecmwflibs==0.5.5
+findlibs==0.0.5
+fiona==1.9.5
+fonttools==4.46.0
+geopandas==0.13.2
+gym==0.26.2
+gym-notices==0.0.8
+idna==3.6
+importlib-metadata==7.0.0
+importlib-resources==6.1.1
+kiwisolver @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_93o8te804v/croot/kiwisolver_1672387163224/work
+matplotlib @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_a23xd3m8b1/croot/matplotlib-suite_1693812470272/work
+networkx==3.1
+numpy @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_f9f5xs2fx0/croot/numpy_and_numpy_base_1682520577456/work
+packaging==23.2
+pandas==2.0.3
+Pillow==10.1.0
+pycparser==2.21
+pyparsing @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_3b_3vxnd07/croots/recipe/pyparsing_1661452540919/work
+pyproj @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_14o4hhfiiz/croot/pyproj_1675244175936/work
+pyshp @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_38csig95a8/croot/pyshp_1706100962355/work
+python-dateutil==2.8.2
+pytz==2023.3.post1
+rasterio==1.3.9
+requests==2.31.0
+scipy==1.10.1
+seaborn==0.13.2
+shapely @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_99qb8m92wn/croot/shapely_1680636304338/work
+six @ file:///tmp/build/80754af9/six_1644875935023/work
+snuggs==1.4.7
+tqdm==4.66.1
+tzdata==2023.3
+unicodedata2 @ file:///private/var/folders/k1/30mswbxs7r1g6zwn8y4fyt500000gp/T/abs_a3epjto7gs/croot/unicodedata2_1713212955584/work
+urllib3==2.1.0
+xarray==2023.1.0
+zipp @ file:///private/var/folders/nz/j6p8yfhx1mv_0grj5xl4650h0000gp/T/abs_31jm3q76eq/croot/zipp_1704206913245/work
