@@ -58,21 +58,33 @@ The installation process should take approximately 40 seconds on a standard reco
 ## Code Description
 
 The code folder contains Python scripts designed to analyze solar and wind power installations in China, evaluate complementary strategies, and visualize the results through various statistical and geographical plots. Below is a brief description of the functionality of each script:
-- fig1_calculate_provincial_statistic.py:
+
+- fig1_calculate_provincial_statistic.py
 
 Calculates the total annual power generation for solar and wind installations in each province of China for the year 2022, and generates a bar chart for visualization.
 
-- fig1_visualize_solar_power_location.py:
+- fig1_visualize_solar_power_location.py
+
 Visualizes solar installations across China identified by our deep learning pipeline, and plots a detailed map of the locations.
-- fig1_visualize_wind_power_location.py:
+
+- fig1_visualize_wind_power_location.py
+  
 Visualizes wind installations across China identified by our deep learning pipeline, and generates a map showing their distribution.
-- fig2_visualize_correlation_map.py:
+
+- fig2_visualize_correlation_map.py
+  
 Analyzes different solar-wind complementary strategies, and plots correlation coefficients map under various strategies and the optimal matching maps.
-- fig3_statistic_analysis.py:
+
+- fig3_statistic_analysis.py
+
 Evaluates the effectiveness of the optimal solar-wind complementary strategy in mitigating energy fluctuations, and generates a series of statistical analysis charts and maps.
-- fig4_penetration_analysis.py:
+
+- fig4_penetration_analysis.py
+  
 Investigates the impact of solar-wind complementarity on energy penetration, and creates related statistical analysis charts and maps.
-- fig5_with_without_storage.py:
+
+- fig5_with_without_storage.py
+  
 Analyzes the impact of storage on flexible power generation, and produces corresponding statistical analysis charts and maps.
 
 ## Demo
