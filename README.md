@@ -13,4 +13,15 @@ The rapid expansion of solar and wind installations in China has introduced sign
 
 ## System Requirements
 ### Hardware requirements
-package requires only a standard computer with enough RAM to support the in-memory operations.
+The codes requires only a standard computer with enough RAM to support the in-memory operations.
+
+### Software requirements
+#### OS Requirements
+The codes has been tested on the following systems:
+
+- macOS: Sonoma 14.5
+- Linux: Ubuntu 20.04
+
+#### Python Dependencies
+
+
